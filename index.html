@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="monserrat-h1">Mi primer ejercicio</h1>
+        <h2 class="roboto-condensed-h2">Subtitulo</h2>  
+    </header>
+    <nav>   
+        <picture >
+            <source srcset="images/undraw_computer_apps_9ssq.png" type="image/png">
+            <source srcset="images/undraw_computer_apps_9ssq.svg" type="image/svg">
+            <img src="images/undraw_computer_apps_9ssq.png" alt="Logo of the site, image of a dandelion" height="100px">
+        </picture>
+        <ul>
+            <li>
+                <a href="">Inicio</a>
+            </li>
+            <li>
+                <a href="">Productos</a>
+            </li>
+            <li>
+                <a href="">Contacto</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <p>Mi main</p>
+        <video controls height="400px" width="800px">
+            <source src="video.mp4" type="video/mp4">
+            <track src="subtitulos.vtt" kind="subtitles" srclang="en" label="English">
+            <p>
+                Your browser doesn't support HTML video. Here is a
+                <a href="video.mp4" download="video.mp4">link to the video</a> instead.
+            </p>
+        </video>
+        <form method="POST" action="https://formspree.io/f/xeojbrjo">
+            <label for="email">Your Email</label>
+            <input name="Email" id="email" type="email">
+            <label for="tel">Your Telephone</label>
+            <input name="Tel" id="tel" type="tel">
+            
+            
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <p>Mi footer</p>
+    </footer>
+</body>
+</html>
