@@ -1,0 +1,44 @@
+.form-container {
+    max-width: 40%; /* Set maximum width for the form */
+    margin: 20px auto 60px auto; /* Center the form horizontally */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #16423C;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-element {
+    display: flex; /* Use Flexbox to align label and input */
+    margin-bottom: 15px; /* Space between each form group */
+    align-items: center; /* Vertically center align the label and input */
+    flex-wrap: wrap;
+}
+
+label {
+    width: 150px; /* Set a fixed width for all labels */
+    text-align: right; /* Align label text to the right */
+    margin-right: 10px; /* Space between label and input */
+    color: antiquewhite;
+}
+
+input {
+    flex: 1; /* Make input take the remaining space */
+    padding: 8px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    border-radius: 8px;
+}
+/*
+input:invalid {
+    border-color: red;
+}
+
+.input-validation{
+    color: rgb(214, 56, 56); 
+    background-color: rgb(212, 172, 145);
+    border-radius: 5px;
+    width: 100%;
+    margin: 5px;
+}
+*/
