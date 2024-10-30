@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --background-color: #E9EFEC; /* Define your custom background color */
+    --primary-color: #6A9C89;
+    --secondary-color: #secondaryColorHere;
+    /* Add other variables as needed */
+}
+
+* {
+    margin: 0px;
+    padding: 5px;
+}
+
+.montserrat-h1 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+h2 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    color: darkblue;
+
+}
+
+.robot-condensed-h2 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    color: brown;
+}
+
+html, body {
+    background-color: var(--background-color);
+    padding: 0px;
+    width: 100%;
+    margin: 0px;
+}
+
+/*
+In the grid cotainer we indicate the amount of rows and columns 
+by the number of values we asign to each parameter
+each value will be the width/hright of each row/column
+grid-template-rows: 1fr 1fr 5fr 1fr;
+grid-template-columns: 1fr 4fr 1fr;
+
+In each grid element we indicate the row/column end with the following syntax
+
+grid-column: {start_column} / {end_column};
+grid-column: {start_column} / -1; -1 equals to end
+
+grid-column-start: {start_column};
+grid-column-start: {end_column};
+
+*/
+.site-layout{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns:1fr;
+    justify-items: center;
+    width: 100%;
+    padding: 0px;
+}
+.main-section{
+    grid-row: 3; /* Third row */
+    width: 100%;
+    margin: 0px;
+}
+
+.footer-section {
+    background-color: #16423C;
+    grid-column: 1 / -1; /* Span from the first to the last column */
+    grid-row: 4; /* Fourth row */
+    width: 100%;
+}
+
+
+.header-section {
+    grid-column: 1 / -1; /* Span from the first to the last column */
+    grid-row: 2; /* Second row */    
+    width: 100%;
+}
+
+.home-sub-section {
+    grid-column: 1 / -1;    
+    grid-row: 1; /* Third row */
+    background-color: var(--primary-color);
+}
+.main-layout{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns:1fr;
+    justify-items: center;
+    width: 100%;
+}
+.product-sub-section {
+    grid-column: 1 / -1;    
+    grid-row: 2; /* Third row */
+    background-color: var(--primary-color);
+}
+
+.reseñas-container {
+    grid-column: 1 / -1;    
+    grid-row: 5; /* Third row */
+    background-color: var(--primary-color);
+}
+.contact-us-section {
+    grid-column: 1 / -1;    
+    grid-row: 4; /* Third row */
+    background-color: var(--primary-color);
+}
+
+.review-sub-section {
+    grid-column: 1 / -1;    
+    grid-row: 3; /* Third row */
+    background-color: var(--primary-color);
+}
+
+
+/*NAV STYLES*/
+.nav-section {
+    grid-column: 1 / -1; /* Span from the first to the last column */
+    grid-row: 1;
+    background-color: #C4DAD2;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    height: auto;
+    z-index: 100;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.nav-image{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.nav-element-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: start;
+}
+
+
+nav > ul > li {
+    margin: 15px;
+    list-style-type: none;
+    border-color: #16423C;
+    border-width: 2px;
+    border: 2px;
+}
+
+
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    justify-content: flex-start;
+    justify-items: center;
+    align-items: stretch;
+    align-content: space-evenly;
+
+}
+.product-list-container{
+    width: 100%;
+}
+.product-item {
+    height: auto;
+    min-width: 200px;
+    width: 15%;
+    margin: 10px 4%;
+    border: 5px; 
+    padding: 10px;   
+    border-color: black;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 5px;
+    background-size: auto;
+}
+
+.product-image{
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    max-height: 50px;
+    padding: auto;
+
+}
+.product-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.add-to-cart-button{
+    margin: 5px;
+    color: #16423C;
+    width: 100%;
+    border-radius: 5px;
+    border-color: black;
+}
+.add-to-cart-button:hover{
+    filter: brightness(1.05); /* Increases brightness by 20% */
+    transform: scale(1.01); /* Slight scaling effect */
+    box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+.reseñas-container {
+    display: grid;
+    grid-template: 1fr / repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 600px) {
+    .reseñas-container {
+        display: grid;
+        grid-template: repeat(3, 1fr) / 1fr;
+        justify-items: center;
+        
+    }
+}
+section {
+    width: 100%;
+}
+.reseña-item {
+    width: auto;
+    height: auto;
+    background-color: #C4DAD2;
+    border-radius: 5px;
+}
+
+.form-container {
+    max-width: 40%; /* Set maximum width for the form */
+    margin: 20px auto 60px auto; /* Center the form horizontally */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #16423C;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-element {
+    display: flex; /* Use Flexbox to align label and input */
+    margin-bottom: 15px; /* Space between each form group */
+    align-items: center; /* Vertically center align the label and input */
+    flex-wrap: wrap;
+}
+
+label {
+    width: 150px; /* Set a fixed width for all labels */
+    text-align: right; /* Align label text to the right */
+    margin-right: 10px; /* Space between label and input */
+    color: antiquewhite;
+}
+
+input {
+    flex: 1; /* Make input take the remaining space */
+    padding: 8px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    border-radius: 8px;
+}
+/*
+input:invalid {
+    border-color: red;
+}
+
+.input-validation{
+    color: rgb(214, 56, 56); 
+    background-color: rgb(212, 172, 145);
+    border-radius: 5px;
+    width: 100%;
+    margin: 5px;
+}
+*/
