@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Pagina Web</title>
+    <title>EcoEase - Sustainable Living</title>
     <link rel="stylesheet" href="styles/main.css">
-    <!-- <link rel="stylesheet" href="styles/form_styles.css"> -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"> </script>
-    <!-- <script type="text/javascript" src="functionality.js"> </script> -->
 </head>
 
 <body>
     <div class="site-layout">
-        <div class="nav-section">
+        <div class="nav-section" id="nav-section">
             <nav>
                 <div class="nav-image">
                         <img  src="images/undraw_computer_apps_9ssq.png" alt="Logo of the site, image of a dandelion"
@@ -21,7 +18,7 @@
                 </div>
                 <ul class="nav-element-container">
                     <li>
-                        <a href="index.html">Inicio</a>
+                        <a href="#nav-section">Inicio</a>
                     </li>
                     <li>
                         <a href="#product-section">Productos</a>
@@ -36,24 +33,25 @@
         </div>
         <div class="header-section">
             <header>
-                <h1 class="monserrat-h1">Mi primer ejercicio</h1>
-                <h2 class="roboto-condensed-h2">Subtitulo</h2>
+                <h1 class="center-text" id="header">EcoEase</h1>
+                <h2 class="center-text" id="sub-header">Sustainable Choices, Effortless Living</h2>
             </header>
         </div>
         <div class="main-section">
             <main class="main-layout">
 
                 <section class="home-sub-section">
-                    <p>Mi main</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit non, reprehenderit ex corporis
-                        fuga
-                        maiores
-                        nulla porro corrupti, recusandae assumenda commodi iure ab rem harum, possimus odit facilis
-                        iusto.
-                        Error.
+                    <h3 class="center-text">
+                        About EcoEase
+                    </h3>
+                    <p class="center-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, nam cupiditate non ipsam, ab molestiae odit, velit natus harum suscipit tempore ut aspernatur voluptate doloribus tenetur neque assumenda porro excepturi!
+                    </p>
+                    <p class="center-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, est maxime nulla quae rerum illum distinctio cupiditate earum corporis, cum, sapiente alias. Culpa accusamus tempore nostrum quae ratione soluta voluptates.
                     </p>
 
-                    <video controls height="200px" width="100px">
+                    <video class="home-video">
                         <source src="video.mp4" type="video/mp4">
                         <track src="subtitulos.vtt" kind="subtitles" srclang="en" label="English">
                         <p>
@@ -65,7 +63,7 @@
 
                 <section class="product-sub-section">
                     <div class="section-header">
-                        <h2>Products</h2>
+                        <h3>Products</h3>
                     </div>
                     <div class="section-data">
 
@@ -79,9 +77,8 @@
                                     <img src="" alt="Bamboo Cutlery Set">
                                 </div>
                                 <div class="product-footer">
-                                    <p class="product-description">A portable set of bamboo utensils including a fork,
-                                        knife, spoon, and
-                                        chopsticks, perfect for on-the-go meals.
+                                    <p class="product-description">
+                                        A portable set of bamboo utensils including a fork, knife, spoon, and chopsticks, perfect for on-the-go meals.
                                     </p>
                                     <button class="add-to-cart-button">Add to Cart</button>
                                 </div>
@@ -228,7 +225,7 @@
                 </section>
                 <section class="review-sub-section" id="review-section">
                     <div class="section-header">
-                        <h2>Reseñas</h2>
+                        <h3>Reseñas</h3>
                     </div>
                     <div class="section-data">
                         <ul class="reseñas-container">
@@ -306,7 +303,7 @@
                             </div>
 
                             <div class="form-element">
-                                <label for="email">Correo electrónico:</label>
+                                <label for="email">Email:</label>
                                 <input type="email" id="email" name="email" placeholder="juandoe@live.com" value="">
                             </div>
 
@@ -335,11 +332,27 @@
             </main>
         </div>
         <div class="footer-section">
-
-            <footer>
-                <p>Mi footer</p>
+            <footer class="footer">
+                <p>&copy; 2024 EcoEase by Felipe Fernandez</p>
+                <div class="social-media-container">
+                    <a href="https://instagram.com" target="_blank">
+                        <img src="images/instagram-logo.png" alt="Instagram Logo" class="social-icon">
+                    </a>
+                    <a href="https://facebook.com" target="_blank">
+                        <img src="images/facebook-logo.png" alt="Facebook Logo" class="social-icon">
+                    </a>
+                    <a href="https://x.com" target="_blank">
+                        <img src="images/x-logo.png" alt="X Logo" class="social-icon">
+                    </a>
+                    <a href="https://linkedin.com" target="_blank">
+                        <img src="images/linkedin-logo.png" alt="LinkedIn Logo" class="social-icon">
+                    </a>
+                    <a href="https://github.com" target="_blank">
+                        <img src="images/github-logo.png" alt="GitHub Logo" class="social-icon">
+                    </a>
+                </div>
             </footer>
-        </div>
+        </div>        
     </div>
 </body>
 

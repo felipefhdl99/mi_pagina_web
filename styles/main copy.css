@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@100;400;700&display=swap');
+
+:root {
+    --secondary-background-color: #e9c46a;
+    --primary-background-color: #f4f1de;
+    --accent-color: #e76f51;
+    --header-color: #264653; 
+    --secondary-color: #AAAAAA;
+    --primary-font-family: "Lora", serif;
+    --secondary-font-family: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    font-family: var(--secondary-font-family);
+    border-color: var(--accent-color);
+}
+
+h1, h2, h3 {
+    font-family: var(--primary-font-family);
+    font-weight: bold;
+}
+
+html, body {
+    background-color: var(--primary-background-color);
+    font-family: var(--secondary-font-family);
+    padding: 0;
+    width: 100%;
+    margin: 0;
+}
+
+/* Layout */
+.site-layout {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    width: 100%;
+}
+
+.main-section {
+    width: 100%;
+}
+
+.footer-section {
+    background-color: var(--secondary-background-color);
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.header-section, .nav-section {
+    width: 100%;
+    background-color: var(--secondary-background-color);
+}
+
+/* Nav */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--secondary-background-color);
+}
+
+.nav-element-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-element-container li {
+    list-style-type: none;
+    margin: 10%;
+}
+
+/* Product Section */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.product-item {
+    min-width: 200px;
+    width: 15%;
+    margin: 10px 4%;
+    border: 2px solid var(--accent-color);
+    padding: 10px;
+    background-color: var(--secondary-background-color);
+    border-radius: 5px;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 200px;
+    max-height: 50px;
+}
+
+.add-to-cart-button:hover {
+    filter: brightness(1.05);
+    transform: scale(1.01);
+    box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.2);
+}
+
+/* Form Container */
+.form-container {
+    max-width: 40%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--secondary-background-color);
+    border-radius: 10px;
+}
+
+label {
+    color: var(--header-color);
+}
+
+@media (max-width: 600px) {
+    .product-item, .form-container {
+        width: 90%;
+    }
+}
