@@ -266,6 +266,7 @@ section {
     background-color: var(--secondary-background-color);
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 
@@ -277,17 +278,17 @@ section {
 }
 
 label {
-    width: 150px; /* Set a fixed width for all labels */
+    width: 100%; /* Set a fixed width for all labels */
     text-align: right; /* Align label text to the right */
     margin-right: 10px; /* Space between label and input */
     color: antiquewhite;
     font-weight: bold;
+    padding: 2px;
 }
 
 input {
     flex: 1; /* Make input take the remaining space */
-    padding: 8px;
-    box-sizing: border-box; /* Ensure padding is included in width */
+    padding: 2px;
     border-radius: 8px;
     text-align: left;
     max-width: 100%
@@ -325,5 +326,9 @@ a {
     }
     label{
         text-align: left;
+    }
+    .form-container{
+        width: 80%;
+        max-width: 90%;
     }
 }
