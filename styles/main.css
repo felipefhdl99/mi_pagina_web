@@ -207,12 +207,18 @@ nav > ul > li {
     background-size: auto;
 }
 
-.product-image{
+.product-image-container{
     width: 100%;
     max-width: 200px;
     height: 100%;
-    max-height: 50px;
     padding: auto;
+    justify-content: center;
+    align-content: center;
+}
+.product-image{
+    object-fit: cover;
+    width: 100%;
+
 }
 
 .reseña-autor{
