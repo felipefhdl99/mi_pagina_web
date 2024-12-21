@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoEase - Sustainable Living</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"> </script>
 </head>
 
 <body>
+
     <div class="site-layout">
         <div class="nav-section" id="nav-section">
             <nav>
@@ -17,20 +19,25 @@
                 </div>
                 <ul class="nav-element-container">
                     <li>
-                        <a href="#nav-section">Inicio</a>
+                        <a href="#">Inicio</a>
                     </li>
                     <li>
                         <a href="#product-section">Productos</a>
+
                     </li>
+                    <li>
+                        <a href="#review-section">Reseñas</a>
+                        
+                    </li>
+
                     <li>
                         <a href="#contact-us-section">Contacto</a>
                     </li>
                 </ul>
                 <div class="nav-header">
-                    <a href="">
+                    <button id="show-cart-btn">
                         <img src="assets/shopping-cart.png" alt="Shopping cart" height="40px">
-                    </a>
-
+                    </button>
                 </div>
             </nav>
 
@@ -43,7 +50,50 @@
         </div>
         <div class="main-section">
             <main class="main-layout">
+                <div class="cart-container" id="cart-container" hidden>
+                    <div class="cart-header">
+                        <h4 class="cart-title">Carrito de compras </h4>
+                        <div class="close-cart">
+                            <button class="close-cart-btn" id="close-cart-btn">X</button>
+                        </div>
+                    </div>
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                            <!-- <tr>
+                                <td>Producto 1</td>
+                                <td>1</td>
+                                <td>$10</td>
+                                <td>$10</td>
+                            </tr> -->
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>Total a Pagar</td>
+                                <td></td>
+                                <td></td>
+                                <td id="cart-total">$0.00</td>
+                            </tr>
+                        </tfoot>
 
+                    </table>
+                    </ul>
+                    <div class="cart-footer">
+                        <div class="cart-btns">
+                            <a href="pago.html" id="cart-btn-buy" class="productos-btn-compra">
+                                <button id="cart-btn-buy" class="productos-btn-compra">Comprar</button>
+                            </a>
+                            <button id="clear-cart-btn" class="products-btn-compra">Vaciar</button>
+                        </div>
+                    </div>
+                </div>
                 <section class="home-sub-section">
                     <h3 class="center-text">
                         About EcoEase
@@ -76,95 +126,7 @@
                         <h3>Products</h3>
                     </div>
                     <div class="section-data">
-
-                        <ol class="product-container" id="product-section">
-                            <li class="product-item">
-                                <div class="product-header">
-                                    <h3 class="product-title">Bamboo Toothbrush</h3>
-                                    <h4 class="product-price">$15.00</h4>
-                                </div>
-                                <div class="product-image-container">
-                                    <img class="product-image"  src="assets/products/Bamboo Toothbrush (Pack of 4).jpg" alt="Bamboo Toothbrush">
-                                </div>
-                                <div class="product-footer">
-                                    <p class="product-description">
-                                        A portable set of bamboo utensils including a fork, knife, spoon, and
-                                        chopsticks, perfect for on-the-go meals.
-                                    </p>
-                                    <button class="add-to-cart-button">Add to Cart</button>
-                                </div>
-                            </li>
-
-                            <li class="product-item">
-                                <div class="product-header">
-                                    <h3 class="product-title">Organic Cotton Tote Bag</h3>
-                                    <h4 class="product-price">$15.00</h4>
-                                </div>
-                                <div class="product-image-container">
-                                    <img class="product-image" src="assets/products/Organic Cotton Tote Bag.jpg" alt="Organic Cotton Tote Bag">
-                                </div>
-                                <div class="product-footer">
-                                    <p class="product-description">A portable set of bamboo utensils including a fork,
-                                        knife, spoon, and
-                                        chopsticks, perfect for on-the-go meals.
-                                    </p>
-                                    <button class="add-to-cart-button">Add to Cart</button>
-                                </div>
-                            </li>
-
-                            <li class="product-item">
-                                <div class="product-header">
-                                    <h3 class="product-title">Recycled Glass Jars</h3>
-                                    <h4 class="product-price">$15.00</h4>
-                                </div>
-                                <div class="product-image-container">
-                                    <img class="product-image"  src="assets/products/Recycled Glass Storage Jars (Set of 2).jpg" alt="Recycled Glass Jars">
-                                </div>
-                                <div class="product-footer">
-                                    <p class="product-description">A portable set of bamboo utensils including a fork,
-                                        knife, spoon, and
-                                        chopsticks, perfect for on-the-go meals.
-                                    </p>
-                                    <button class="add-to-cart-button">Add to Cart</button>
-                                </div>
-                            </li>
-
-                            <li class="product-item">
-                                <div class="product-header">
-                                    <h3 class="product-title">Reusable Stainless Steel Water Bottle</h3>
-                                    <h4 class="product-price">$15.00</h4>
-                                </div>
-                                <div class="product-image-container">
-                                    <img class="product-image"  src="assets/products/Reusable Stainless Steel Water Bottle.jpg" alt="Reusable Stainless Steel Water Bottle">
-                                </div>
-                                <div class="product-footer">
-                                    <p class="product-description">A portable set of bamboo utensils including a fork,
-                                        knife, spoon, and
-                                        chopsticks, perfect for on-the-go meals.
-                                    </p>
-                                    <button class="add-to-cart-button">Add to Cart</button>
-                                </div>
-                            </li>
-
-                            <li class="product-item">
-                                <div class="product-header">
-                                    <h3 class="product-title">Solar-Powered Phone Charger</h3>
-                                    <h4 class="product-price">$15.00</h4>
-                                </div>
-                                <div class="product-image-container">
-                                    <img class="product-image"  src="assets/products/Solar-Powered Phone Charger.jpg" alt="Solar-Powered Phone Charger">
-                                </div>
-                                <div class="product-footer">
-                                    <p class="product-description">A portable set of bamboo utensils including a fork,
-                                        knife, spoon, and
-                                        chopsticks, perfect for on-the-go meals.
-                                    </p>
-                                    <button class="add-to-cart-button">Add to Cart</button>
-                                </div>
-                            </li>
-
-
-                        </ol>
+                        <ol class="product-container" id="product-section"></ol>
                     </div>
                 </section>
                 <section class="review-sub-section" id="review-section">
@@ -234,7 +196,7 @@
                                 <label for="nombre">Nombre:</label>
                                 <input type="text" id="nombre" name="nombre" placeholder="Juan" value="" required>
                                 <small class="input-validation" id="firstnamecheck" hidden>
-                                    Must complete with your first name, can only contain letters
+                                    Completar el primer nombre, solo puede tener letras
                                 </small>
                             </div>
 
@@ -242,13 +204,17 @@
                                 <label for="apellido">Apellido:</label>
                                 <input type="text" id="apellido" name="apellido" placeholder="Doe" value="" required>
                                 <small class="input-validation" id="lastnamecheck" hidden>
-                                    Must complete with your last name, can only contain letters
+                                    Completar el primer nombre, solo puede tener letras
                                 </small>
                             </div>
 
                             <div class="form-element">
                                 <label for="email">Email:</label>
                                 <input type="email" id="email" name="email" placeholder="juandoe@live.com" value="">
+                                <small class="input-validation" id="emailcheck" hidden>
+                                    Email no valido
+                                </small>
+
                             </div>
 
                             <div class="form-element">
@@ -256,8 +222,7 @@
                                 <input type="tel" id="tel" name="Tel" placeholder="+5412345678"
                                     pattern="\+\d{1,3}\d{1,10}" value="">
                                 <small class="input-validation" id="phonecheck" hidden>
-                                    Your phone must start with start with the phone country code and containt up to 12
-                                    numbers
+                                    El numero de telefono debe contener el codigo de pais y hasta 12 numeros
                                 </small>
                             </div>
 
@@ -266,6 +231,9 @@
                                 <input type="text" id="mensaje" name="mensaje"
                                     placeholder="Deje su mensaje acá"></input>
                             </div>
+                            <small class="input-validation" id="messagecheck" hidden>
+                                Debe dejar un mensaje
+                            </small>
                             <div class="form-element">
                                 <input type="submit" id="submitbtn" value="Enviar">
                             </div>
@@ -298,6 +266,7 @@
             </footer>
         </div>
     </div>
+    <script type="text/javascript" src="script.js" defer></script> 
 </body>
 
 </html>
