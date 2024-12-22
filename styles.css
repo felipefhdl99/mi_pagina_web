@@ -335,6 +335,23 @@ a {
     text-decoration: none;
 }
 
+#cart-size {
+        position: absolute; /* Position relative to the cart-icon */
+        top: 10px; /* Adjust vertical position */
+        right: 6px; /* Adjust horizontal position */
+        background-color: var(--accent-color); /* Background for counter */
+        color: white; /* Text color */
+        font-size: 1em; /* Font size for counter */
+        width: 20px; /* Fixed width */
+        height: 20px; /* Fixed height */
+        border-radius: 50%; /* Make it a circle */
+        display: flex; /* Center the number */
+        justify-content: center;
+        align-items: center;
+        font-weight: bold; /* Make text bold */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for a 3D effect */
+    }
+
 #show-cart-btn {
     background-color: var(--secondary-background-color);
     color: none;

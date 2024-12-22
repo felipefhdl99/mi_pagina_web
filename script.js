@@ -48,7 +48,7 @@ const productos = [
   },
 ];
 
-const cart = [];
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 let productosHTML = "";
 productos.forEach((producto) => {
@@ -98,7 +98,8 @@ function validateForm(formInput, regExp, formValidation) {
 
 console.log("Loading eEvent handler");
 $(document).ready(function () {
-  console.log("Document loaded");
+  let cartHTML = "";
+  //console.log("Document loaded");
 
   /* Contact form validation */
   $("#tel").on("change", function (event) {
@@ -149,12 +150,32 @@ $(document).ready(function () {
 
   /* Cart functionality */
 
+  if(cart.length > 0){
+    console.log('Cart found, uplaoding info.');
+    document.getElementById("cart-size").innerText = cart.length.toString();
+    cart.forEach((product) => {
+      cartHTML += `
+          <tr>
+              <td>${product.title}</td>
+              <td>${product.ammount}</td>
+              <td>$${product.price.toFixed(2)}</td>
+              <td>$${(product.price * product.ammount).toFixed(2)}</td>
+          </tr>
+          `;
+    });
+    document.getElementById("cart-items").innerHTML = cartHTML;
+    document.getElementById("cart-total").innerHTML =
+      "$" +
+      cart.reduce((acc, product) => acc + product.price * product.ammount, 0);
+  }
+
   document.getElementById("cart-container").style.marginTop = `${
     document.getElementById("nav-section").offsetHeight + 10
   }px`;
 
   $(".add-to-cart-button").click(function (event) {
     //console.log("Add to cart button clicked");
+
 
     /* Get the info of the clicked product */
     const productElement = this.closest(".product-item");
@@ -184,10 +205,12 @@ $(document).ready(function () {
       cart.push(newProduct);
     }
 
+    document.getElementById("cart-size").innerText = cart.length.toString();
     //console.log(cart);
+    //console.log(cart.length);
 
     /* Update the cart */
-    let cartHTML = "";
+    cartHTML = "";
     cart.forEach((product) => {
       cartHTML += `
           <tr>
@@ -204,6 +227,7 @@ $(document).ready(function () {
     document.getElementById("cart-total").innerHTML =
       "$" +
       cart.reduce((acc, product) => acc + product.price * product.ammount, 0);
+    localStorage.setItem('cart', JSON.stringify(cart));
   });
 
   $("#show-cart-btn").click(function () {
@@ -221,8 +245,10 @@ $(document).ready(function () {
   $("#clear-cart-btn").click(function () {
     //console.log("Clear cart button clicked");
     document.getElementById("cart-items").innerHTML = "";
+    document.getElementById("cart-size").innerHTML = "0";
     document.getElementById("cart-total").innerHTML = "$0.00";
-    cart = [];
+    cart.length = 0;
+    localStorage.removeItem('cart');
   });
 });
 
