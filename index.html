@@ -192,7 +192,7 @@
                     </div>
                     <div class="section-data">
 
-                        <form class="form-container" method="POST" action="https://formspree.io/f/xeojbrjo">
+                        <form class="form-container" method="POST" action="https://formspree.io/f/xeojbrjo" id="contact-form">
                             <div class="form-element">
                                 <label for="nombre">Nombre:</label>
                                 <input type="text" id="nombre" name="nombre" placeholder="Juan" value="" required>
@@ -205,7 +205,7 @@
                                 <label for="apellido">Apellido:</label>
                                 <input type="text" id="apellido" name="apellido" placeholder="Doe" value="" required>
                                 <small class="input-validation" id="lastnamecheck" hidden>
-                                    Completar el primer nombre, solo puede tener letras
+                                    Completar el apellido, solo puede tener letras
                                 </small>
                             </div>
 
@@ -220,8 +220,7 @@
 
                             <div class="form-element">
                                 <label for="tel">Telefono:</label>
-                                <input type="tel" id="tel" name="Tel" placeholder="+5412345678"
-                                    pattern="\+\d{1,3}\d{1,10}" value="">
+                                <input type="tel" id="tel" name="Tel" placeholder="+5412345678"     value="">
                                 <small class="input-validation" id="phonecheck" hidden>
                                     El numero de telefono debe contener el codigo de pais y hasta 12 numeros
                                 </small>

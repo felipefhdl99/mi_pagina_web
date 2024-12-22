@@ -80,17 +80,18 @@ productos.forEach((producto) => {
 const productContainer = document.getElementById("product-section");
 productContainer.innerHTML = productosHTML;
 
-const phoneRegExp = new RegExp("\\+\\d{1,3}\\d{1,12}", "gm");
-const nameRegExp = new RegExp("[a-zA-Z ]+", "gi");
-const emailRegExp = new RegExp("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}", "gi");
-const messageRegExp = new RegExp("[.]+", "gi");
+const phoneRegExp = new RegExp("^\\+[\\-\\s\\d]+");
+const nameRegExp = new RegExp("[a-zA-Z'’\\-\\s]+");
+const emailRegExp = new RegExp("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+const messageRegExp = new RegExp("^[a-zA-Z0-9\\s\\.\\,\\!\\?\\'\\-]{1,250}$");
 
 function validateForm(formInput, regExp, formValidation) {
-  if(regExp.test(formInput.value)){
-    formValidation.hide();
+  let value = formInput.value || "";
+  if(regExp.test(value)){
+    formValidation.attr("hidden", true);
     return true;
   } else {
-    formValidation.show();
+    formValidation.attr("hidden", false);
     return false;
   };
 };
@@ -124,26 +125,25 @@ $(document).ready(function () {
   });
 
   // Submit button
-  $("#submitbtn").click(function () {
-    let phoneError = validateForm($("#tel"), phoneRegExp, $("#phonecheck"));
-    let firstNameError = validateForm($("#nombre"), nameRegExp, $("#firstnamecheck"));
-    let lastNameError = validateForm($("#apellido"), nameRegExp, $("#lastnamecheck"));
-    let emailError = validateForm($("#email"), emailRegExp, $("#emailcheck"));
-    let messageError = validateForm($("#mensaje"), messageRegExp, $("#messagecheck"));
+  $("#submitbtn").click(function (event) {
+    event.preventDefault();
+    let phoneError = validateForm(document.getElementById("tel"), phoneRegExp, $("#phonecheck"));
+    let firstNameError = validateForm(document.getElementById("nombre"), nameRegExp, $("#firstnamecheck"));
+    let lastNameError = validateForm(document.getElementById("apellido"), nameRegExp, $("#lastnamecheck"));
+    let emailError = validateForm(document.getElementById("email"), emailRegExp, $("#emailcheck"));
+    let messageError = validateForm(document.getElementById("mensaje"), messageRegExp, $("#messagecheck"));
     if(
       phoneError &&
       firstNameError &&
       lastNameError &&
       emailError &&
-      messageError &&
-      $("#email").val() !== "" &&
-      $("#apeellido").val() !== "" &&
-      $("#nombre").val() !== "" &&
-      $("#tel").val() !== "" &&
-      $("#mensaje").val() !== ""
+      messageError
     ) {
+      console.log("Form validated, submitting");
+      document.getElementById("contact-form").submit();
       return true;
     } else {
+      console.log("Form not valid")
       return false;
     }
   });
